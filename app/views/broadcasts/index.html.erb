@@ -1,7 +1,7 @@
 <div class="d-flex p-2 justify-content-between">
 <h3>All News</h3>
 <Button class="btn btn-secondary text">
-  <%= link_to "Add New News", new_newss_path,:class => "text-light"%>
+  <%= link_to "Add New News", new_broadcast_path,:class => "text-light"%>
 </Button>
 </div>
 
@@ -13,14 +13,14 @@
         <th colspan="3">User Info.</th>
       </tr>
     </thead>
-  <% @newss.each do |i| %>
+  <% @broadcasts.each do |i| %>
     <tbody>
       <tr>
         <td><%= i.id %></td>
         <td><%= i.title %></td>
-        <td><%= link_to "Show", newss_path(i) %></td>
-        <td><%= link_to "Update", edit_newss_path(i) %></td> 
-        <td><%= link_to "Delete", newss_path(i), data:{method: :delete, confirm: "Are you Sure?"}%></td> 
+        <td><%= link_to "Show", broadcast_path(i) %></td>
+        <td><%= link_to "Update", edit_broadcast_path(i) %></td> 
+        <td><%= link_to "Delete", broadcast_path(i), data:{method: :delete, confirm: "Are you Sure?"}%></td> 
     </tr>
     </tbody>
   <% end %>

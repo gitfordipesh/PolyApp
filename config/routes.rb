@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     resources :comments,module: :events
   end
 
-  resources :newss do
-    resources :comments,module: :newss
+  resources :broadcasts do
+    resources :comments,module: :broadcasts
   end
   
   resources :comments

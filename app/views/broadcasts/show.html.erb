@@ -1,0 +1,21 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @broadcast.title%></h1>
+  <p class="lead">News Id : <%= @broadcast.id %></p>
+  <p class="lead">News Is Live : <%= @broadcast.is_live%></p>
+  <h6>Created at : <%= @broadcast.created_at %></h1>
+  <h6>Updated at : <%= @broadcast.updated_at %></h1>
+    <br>
+    <br>
+    <%= render partial:'comments/comments' , locals: {commentable: @broadcast}%>
+    <%= render partial:'comments/form' , locals: {commentable: @broadcast}%>
+  <button class="btn btn-secondary">
+  <%= link_to "Back", broadcasts_path,:class => "text-light"%>
+  </button>  
+  <button class="btn btn-secondary">
+  <%= link_to "Edit News",edit_broadcast_path(@broadcast),:class => "text-light"%>
+  </button>  
+ 
+  <button class="btn btn-danger">
+  <%= link_to "Delete News", broadcast_path(@broadcast),:class => "text-light", data:{method: :delete, confirm: "Are you Sure?"}%>
+  </button>
+</div>
