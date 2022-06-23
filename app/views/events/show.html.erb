@@ -1,0 +1,24 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @event.title%></h1>
+  <p class="lead">Event Id : <%= @event.id %></p>
+  <p class="lead">Date Of Event : <%= @event.scheduled_date%></p>
+  <p class="lead"><%= @event.venue%></p>
+  <p class="lead"><%= @event.address%></p>
+  <h6>Created at : <%= @event.created_at %></h1>
+  <h6>Updated at : <%= @event.updated_at %></h1>
+    <br>
+    <br>
+    <%= render partial:'comments/comments' , locals: {commentable: @event}%>
+    <%= render partial:'comments/form' , locals: {commentable: @event}%>
+
+  <button class="btn btn-secondary">
+  <%= link_to "Back", events_path,:class => "text-light"%>
+  </button>  
+  <button class="btn btn-secondary">
+  <%= link_to "Edit Event", edit_event_path(@event),:class => "text-light"%>
+  </button>  
+ 
+  <button class="btn btn-danger">
+  <%= link_to "Delete Event", event_path(@event),:class => "text-light", data:{method: :delete, confirm: "Are you Sure?"}%>
+  </button>
+</div>

@@ -1,0 +1,22 @@
+    <div class="jumbotron">
+      <h3>All comments</h3>
+      <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th colspan="3">User Info.</th>
+          </tr>
+        </thead>
+        <% commentable.comments.each do |i| %>
+        <tbody>
+          <tr>
+            <td><%= i.id %></td>
+            <td><%= i.title %></td>
+            <td><%= link_to "Update", controller: "comments", action: "edit", id: i%>
+            <td><%= link_to "Delete", [commentable,i], data:{method: :delete, confirm: "Are you Sure?"}%></td> 
+          </tr>
+        </tbody>
+        <% end %>
+      </table>
+    </div>

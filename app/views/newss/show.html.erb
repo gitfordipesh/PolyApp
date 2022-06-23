@@ -1,0 +1,21 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @news.title%></h1>
+  <p class="lead">News Id : <%= @news.id %></p>
+  <p class="lead">News Is Live : <%= @news.is_live%></p>
+  <h6>Created at : <%= @news.created_at %></h1>
+  <h6>Updated at : <%= @news.updated_at %></h1>
+    <br>
+    <br>
+    <%= render partial:'comments/comments' , locals: {commentable: @news}%>
+    <%= render partial:'comments/form' , locals: {commentable: @news}%>
+  <button class="btn btn-secondary">
+  <%= link_to "Back", newss_index_path,:class => "text-light"%>
+  </button>  
+  <button class="btn btn-secondary">
+  <%= link_to "Edit News",edit_newss_path(@news),:class => "text-light"%>
+  </button>  
+ 
+  <button class="btn btn-danger">
+  <%= link_to "Delete News", newss_path(@news),:class => "text-light", data:{method: :delete, confirm: "Are you Sure?"}%>
+  </button>
+</div>

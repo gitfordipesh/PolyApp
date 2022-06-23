@@ -1,0 +1,22 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @article.id %>).<%= @article.title%></h1>
+  <p class="lead"><%= @article.description%></p>
+  <h6>Created at : <%= @article.created_at %></h1>
+  <h6>Updated at : <%= @article.updated_at %></h1>
+    <br>
+    <br>
+    <%= render partial:'comments/comments' , locals: {commentable: @article}%>
+    <%= render partial:'comments/form' , locals: {commentable: @article}%>
+
+  <button class="btn btn-secondary">
+  <%= link_to "Back", articles_path,:class => "text-light"%>
+  </button>  
+  <button class="btn btn-secondary">
+  <%= link_to "Edit Article", edit_article_path(@article),:class => "text-light"%>
+  </button>  
+ 
+  <button class="btn btn-danger">
+  <%= link_to "Delete Article", article_path(@article),:class => "text-light", data:{method: :delete, confirm: "Are you Sure?"}%>
+  </button>
+
+</div>

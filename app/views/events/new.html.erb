@@ -1,0 +1,25 @@
+<h1>Create New Event</h1>
+
+<%= form_with(model: @event, url:events_path) do |form| %>
+<div class="form-group">
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title , class:"form-control" %>
+  </p>  
+  <p>
+    <%= form.label :venue %><br>
+    <%= form.text_field :venue , class:"form-control" %>
+  </p>  
+  <p>
+    <%= form.label :address %><br>
+    <%= form.text_field :address , class:"form-control" %>
+  </p>
+  <p>
+    <%= form.label :scheduled_date %><br>
+    <%= form.date_field :scheduled_date , class:"form-control" %>
+  </p>
+  <p>
+    <%= form.submit class:"btn btn-secondary"%>
+  </p>
+</div>
+<% end %>
